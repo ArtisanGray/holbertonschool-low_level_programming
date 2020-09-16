@@ -7,7 +7,11 @@
 */
 int main(void)
 {
-	write(2,
-	"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n\0", 61);
+	char *buf = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	int i;
+
+	for (i = 0; buf[i]; i++)
+		continue;
+	write(2, buf, i + 1);
 	return (1);
 }
