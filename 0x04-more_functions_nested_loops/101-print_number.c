@@ -13,9 +13,11 @@ void print_number(int n)
 	if (n < 0)
 	{
 		if (n == INT_MIN)
+		{
 			flippy = 1;
+			n++;
+		}
 		_putchar('-');
-		n++;
 		n = -n;
 	}
 	while (div / 10 != 0)
