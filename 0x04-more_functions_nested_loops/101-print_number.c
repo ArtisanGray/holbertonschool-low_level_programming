@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <limits.h>
 /**
 * print_number - prints numbers
 * @n: input integer
@@ -7,15 +8,15 @@
 void print_number(int n)
 {
 	int div = 1000000000;
-	int n2;
+	int flippy = 0;
 
 	if (n < 0)
 	{
+		if (n == INT_MIN)
+			flippy = 1;
 		_putchar('-');
-		if (n == -2147483648)
-			n2 = 2147483647;
-		else
-			n = -n;
+		n++;
+		n = -n;
 	}
 	while (div / 10 != 0)
 	{
@@ -25,5 +26,5 @@ void print_number(int n)
 		}
 		div /= 10;
 	}
-	_putchar('0' + (n2 == 2147483647 ? 8 : n % 10));
+	_putchar('0' + (flippy == 1 ? 8 : n % 10));
 }
