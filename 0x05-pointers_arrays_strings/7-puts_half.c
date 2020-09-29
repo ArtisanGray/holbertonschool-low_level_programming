@@ -22,7 +22,7 @@ int _strlen(char *s)
 */
 void puts_half(char *str)
 {
-	int len = strlen(str), i, oc = 0;
+	int len = _strlen(str), i, oc = 0;
 
 	if (len % 2 != 0)
 		oc = 1;
