@@ -15,10 +15,10 @@ int _strlen(char *s)
 	return (i);
 }
 /**
+* rev_string - reverses a string
+* @s: string
 *
-*
-*
-*
+* Return: null
 */
 void rev_string(char *s)
 {
@@ -30,6 +30,5 @@ void rev_string(char *s)
 		tmp = s[i];
 		s[i] = s[j];
 		s2[j] = tmp;
-		
 	}
 }
