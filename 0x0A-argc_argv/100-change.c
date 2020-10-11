@@ -2,8 +2,8 @@
 #include <stdio.h>
 /**
 * main - counts the number of coins needed to break change of a value
-* @argc - count of arguments
-* @argv - arguments passed through command line
+* @argc: count of arguments
+* @argv: arguments passed through command line
 *
 * Return: 0 on success, 1 on fail.
 */
