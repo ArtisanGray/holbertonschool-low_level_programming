@@ -22,13 +22,13 @@ int _strlen(char *s)
 */
 char *_strdup(char *str)
 {
-	int size = _strlen(str), i;
+	int i;
 	char *dupe;
 
 	if (str == NULL)
 		return (NULL);
 
-	dupe = malloc(sizeof(char) * size + 1);
+	dupe = malloc(sizeof(char) * _strlen(str) + 1);
 	if (dupe == NULL)
 		return (NULL);
 
