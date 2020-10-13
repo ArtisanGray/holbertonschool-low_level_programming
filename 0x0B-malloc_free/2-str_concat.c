@@ -24,14 +24,24 @@ int _strlen(char *s)
 char *str_concat(char *s1, char *s2)
 {
 	int i, j;
-	char *cat = malloc(_strlen(s1) + _strlen(s2) + 1);
+	char *cat;
+
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	cat = malloc(sizeof(char) * (_strlen(s1) + _strlen(s2) + 1));
 
 	if (cat == NULL)
 		return (NULL);
+
 	for (i = 0; s1[i] != '\0'; i++)
 		cat[i] = s1[i];
+
 	for (j = 0; s2[j] != '\0'; j++, i++)
 		cat[i] = s2[j];
+
 	cat[i + j] = '\0';
 
 	return (cat);
