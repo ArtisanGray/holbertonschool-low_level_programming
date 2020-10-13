@@ -23,9 +23,13 @@ int _strlen(char *s)
 char *_strdup(char *str)
 {
 	int size = _strlen(str), i;
-	char *dupe = malloc(sizeof(char) * size + 1);
+	char *dupe;
 
-	if (dupe == NULL || str == NULL)
+	if (size == 0 || str == NULL)
+		return (NULL);
+
+	dupe = malloc(sizeof(char) * size + 1);
+	if (dupe == NULL)
 		return (NULL);
 
 	for (i = 0; str[i] != '\0'; i++)
