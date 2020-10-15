@@ -20,7 +20,7 @@ int _strlen(char *s)
 * @s2: input string 2
 * @n: n bytes to concat
 *
-* return: null on fail, new string on success
+* Return: null on fail, new string on success
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -38,6 +38,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	for (i = 0; s1[i] != '\0'; i++)
 		cat[i] = s1[i];
+	i -= 1;
 	for (j = 0; j < n && s2[j] != '\0'; j++, i++)
 		cat[i] = s2[j];
 	cat[i] = '\0';
