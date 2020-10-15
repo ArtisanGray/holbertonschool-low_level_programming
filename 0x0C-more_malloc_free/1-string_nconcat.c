@@ -24,11 +24,14 @@ int _strlen(char *s)
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, len = _strlen(s1), len2 = _strlen(s2);
+	unsigned int i, j, len;
 	char *cat;
 
 	if (s1 == NULL)
 		s1 = "";
+
+	len = _strlen(s1);
+
 	if (s2 == NULL)
 		s2 = "";
 
@@ -36,11 +39,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (cat == NULL)
 		return (NULL);
-	for (i = 0; i < len; i++)
+	for (i = 0; s1[i] != '\0'; i++)
 		cat[i] = s1[i];
 	for (j = 0; j < n; j++, i++)
 	{
-		if (j < len2)
+		if (s2[j])
 		{
 			cat[i] = s2[j];
 		}
