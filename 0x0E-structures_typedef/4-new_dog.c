@@ -35,7 +35,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	stanowner = malloc(sizeof(char) * _strlen(owner) + 1);
 	/*allocates space for a copy of the owner's name*/
 	if (stanowner == NULL)
+	{
+		free(stanname);
 		return (NULL);
+	}
 
 	for (i = 0; i < _strlen(name) + 1; i++)
 		stanname[i] = name[i];
@@ -44,7 +47,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	stanley = malloc(sizeof(dog_t));
 	if (stanley == NULL)
+	{
+		free(stanowner);
+		free(stanname);
 		return (NULL);
+	}
 
 	stanley->name = stanname;
 	stanley->age = age;
