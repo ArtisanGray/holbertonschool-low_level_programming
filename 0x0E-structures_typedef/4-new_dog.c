@@ -15,29 +15,17 @@ int _strlen(char *s)
 	return (i);
 }
 /**
+* new_dog - creates a new dog
+* @name: name of the dog
+* @age: age of the dog
+* @owner: owner of the dog
 *
-*
-*
+* Return: null on fail, dog on success
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *stanley;
-	char *stanname, *stanowner;
-	int i, j;
-
-	stanname = malloc(sizeof(char) * _strlen(name));
-	/*allocates space for a copy of the dog's name*/
-	if (stanname == NULL)
-		return (NULL);
-	stanowner = malloc(sizeof(char) * _strlen(owner));
-	/*allocates space for a copy of the owner's name*/
-	if (stanowner == NULL)
-		return (NULL);
-
-	for (i = 0; i < _strlen(name); i++)
-		stanname[i] = name[i];
-	for (j = 0; j < _strlen(owner); j++)
-		stanowner[j] = owner[j];
+	char *stanname = name, *stanowner = owner;
 
 	stanley = malloc(sizeof(dog_t));
 	if (stanley == NULL)
