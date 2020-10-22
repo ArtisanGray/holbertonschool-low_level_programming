@@ -20,9 +20,8 @@ int (*get_op_func(char *s))(int, int)
 	while (ops[i].op != NULL)
 	{
 		if (*(ops[i]).op == *s)
-			return (ops[i].f);
+			break;
 		i++;
 	}
-	printf("Error\n");
-	exit(99);
+	return (ops[i].f);
 }

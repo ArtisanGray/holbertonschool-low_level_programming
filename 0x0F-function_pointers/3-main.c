@@ -17,12 +17,12 @@ int main(int argc, char **argv)
 	}
 	a1 = atoi(argv[1]);
 	a2 = atoi(argv[3]);
-	if (argv[2] == NULL)
+	func = (*get_op_func)(argv[2]);
+	if (func == NULL || strlen(argv[2]) > 1) 
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	func = (*get_op_func)(argv[2]);
 	printf("%d\n", func(a1, a2));
 	return (0);
 }
