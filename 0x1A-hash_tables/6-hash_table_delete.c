@@ -30,7 +30,7 @@ void hash_table_delete(hash_table_t *ht)
 	free(ht);
 }
 /**
-* free_tmp: frees a node to bypass gcc error
+* free_tmp - frees a node to bypass gcc error
 * @node: node from argument
 *
 * Return: nothing
