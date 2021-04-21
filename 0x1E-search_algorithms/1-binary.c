@@ -29,6 +29,14 @@ int binary_search(int *array, size_t size, int value)
 	}
 	return (-1);
 }
+/**
+* print_tofro - prints formatted sequence of the current search iteration
+* @arr: array given to print indices from
+* @l: left starting indice
+* @r: right starting indice
+*
+* Return: none
+*/
 void print_tofro(int *arr, unsigned int l, unsigned int r)
 {
 	unsigned int i;
